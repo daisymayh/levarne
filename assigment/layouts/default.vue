@@ -45,6 +45,11 @@ html {
   background-color: #3b8070;
 }
 
+.button--green.is-active {
+  color: #fff;
+  background-color: #3b8070;
+}
+
 .button--grey {
   display: inline-block;
   border-radius: 4px;

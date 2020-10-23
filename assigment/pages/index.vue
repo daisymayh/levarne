@@ -5,8 +5,10 @@
       <h1 class="title">
         assignment
       </h1>
+
       <div class="links">
         <nuxt-link to="/myfolder/mysubpage" class="button--green">2. my page</nuxt-link>
+        <nuxt-link to="/count" class="button--green">3. Counter</nuxt-link>
       </div>
     </div>
   </div>
