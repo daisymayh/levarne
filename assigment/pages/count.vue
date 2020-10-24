@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <Counter/>
+    <Counter />
 
     <div class="links">
         <nuxt-link to="/" class="button--green">homepage</nuxt-link>
         <nuxt-link to="/myfolder/mysubpage" class="button--green">2. my page</nuxt-link>
         <div class="button--green is-active">3. Counter</div>
+        <nuxt-link to="/message/add" class="button--green">4. my page</nuxt-link>
     </div>
   </div>
 </template>

@@ -64,4 +64,19 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.button--grey.is-active {
+  color: #fff;
+  background-color: #35495e;
+}
+
+.input {
+   display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
 </style>
