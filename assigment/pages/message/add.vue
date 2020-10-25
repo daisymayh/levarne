@@ -12,17 +12,13 @@
       <nuxt-link to="/myfolder/mysubpage" class="button--green">2. my page</nuxt-link>
       <nuxt-link to="/count" class="button--green">3. Counter</nuxt-link>
       <div to="/message/add" class="button--green is-active">4. Messsages</div>
+      <nuxt-link to="/form" class="button--green">5. Form (incompleet)</nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    computed: {
-      messages() {
-        return this.$store.state.messages
-      }
-    },
     methods: {
       addMessage(e) {
         this.$store.commit('addMessage', this.$refs.message.value);
@@ -31,7 +27,6 @@
     }
   }
 </script>
-
 
 <style scoped>
   .container {

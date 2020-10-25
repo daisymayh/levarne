@@ -5,8 +5,10 @@
 
     <div class="links">
       <nuxt-link to="/" class="button--green">homepage</nuxt-link>
-      <nuxt-link to="/myfolder/mysubpage" class="button--green is-active">2. my page</nuxt-link>
+      <div class="button--green is-active">2. my page</div>
       <nuxt-link to="/count" class="button--green">3. Counter</nuxt-link>
+      <nuxt-link to="/message/add" class="button--green">4. Messages</nuxt-link>
+      <nuxt-link to="/form" class="button--green">5. Form</nuxt-link>
     </div>
   </div>
 </template>
