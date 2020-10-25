@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <input ref="message" type="text" class="input" placeholder="Add your message here"  v-on:keyup.enter="addMessage" />
+    <input ref="message" type="text" class="input" placeholder="Add your message here" v-on:keyup.enter="addMessage" />
     <button v-on:click="addMessage" class="button--green">Add message</button>
 
   	<div class="links">
@@ -21,8 +21,12 @@
   export default {
     methods: {
       addMessage(e) {
-        this.$store.commit('addMessage', this.$refs.message.value);
-        this.$refs.message.value = "";
+        if (this.$refs.message.value.length !== 0) {
+          this.$store.commit('addMessage', this.$refs.message.value);
+          this.$refs.message.value = "";
+        } else {
+          alert('DOH! Message is empty!');
+        }
       }
     }
   }

@@ -2,10 +2,10 @@
   <div class="wrapper">
     form(class="form")
       h2 Pug
-      input(class="input" type="text" v-model="formData.name" placeholder="Name")
-      input(class="input" type="text" v-model="formData.place" placeholder="Place")
-      input(class="input" type="text" v-model="formData.email" placeholder="Email")
-      button(class="button--submit" type="submit" @click="setEchoResponse") Submit
+      input(class="input" type="text" v-model="formData" placeholder="Name")
+      input(class="input" type="text" v-model="formData" placeholder="Place")
+      input(class="input" type="text" v-model="formData" placeholder="Email")
+      button(class="button--submit" @click="setEchoResponse") Submit
 
 
     //- <form class="form" @submit.prevent="submitForm">
@@ -28,6 +28,11 @@
 
 <script>
   export default {
+    data() {
+      return {
+        formData: []
+      };
+    },
     methods: {
       setEchoResponse() {
         this.$store.dispatch("echo", formData);
