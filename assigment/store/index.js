@@ -1,5 +1,6 @@
 export const state = () => ({
-  messages: []
+  messages: [],
+  somedata: ''
 })
 
 export const mutations = {
@@ -9,8 +10,8 @@ export const mutations = {
     })
   },
 
-  setEchoResponse() {
-    this.$store.dispatch("echo", formData);
+  setEchoResponse(state, formData) {
+      // formData
   }
 }
 
@@ -20,11 +21,10 @@ export const actions = {
       url: "https://d5gryl2o0g.execute-api.eu-west-1.amazonaws.com/development/echo",
       method: "POST",
       headers: {
-        "x-api-key": "apikeyhere"
+        "x-api-key": "ASmtRu6k869JnsmYBVoGNahuoGYKAibXonGicDg5"
       },
       data: formData
     }
-
     let response = await this.$axios(options);
     commit('setEchoResponse', response.data);
   }

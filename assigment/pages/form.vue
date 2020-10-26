@@ -2,20 +2,15 @@
   <div class="wrapper">
     form(class="form")
       h2 Pug
-      input(class="input" type="text" v-model="formData" placeholder="Name")
-      input(class="input" type="text" v-model="formData" placeholder="Place")
-      input(class="input" type="text" v-model="formData" placeholder="Email")
-      button(class="button--submit" @click="setEchoResponse") Submit
+      input(class="input" type="text" v-model="formData.name" placeholder="Name")
+      input(class="input" type="text" v-model="formData.place" placeholder="Place")
+      input(class="input" type="text" v-model="formData.email" placeholder="Email")
+      div(class="button--submit" @click="saveFormData(formData)") Submit
 
 
-    //- <form class="form" @submit.prevent="submitForm">
-    //-   <h2>Form</h2>
-    //-   <input class="input" type="text" v-model="formData.name" placeholder="Name"/>
-    //-   <input class="input" type="text" v-model="formData.place" placeholder="Place"/>
-    //-   <input class="input" type="text" v-model="formData.email" placeholder="Email"/>
-    //-   <button class="button--submit" type="submit" @click="setEchoResponse">Submmit</button>
-    //- </form>
-
+      <ul>
+          <li></li>
+      </ul>
     <div class="links">
       <nuxt-link to="/" class="button--green">homepage</nuxt-link>
       <div class="button--green is-active">2. my page</div>
@@ -25,16 +20,25 @@
     </div>
   </div>
 </template>
-
 <script>
+import {mapMutations} from 'vuex'
   export default {
     data() {
       return {
-        formData: []
+        formData: {
+          name: '',
+          place: '',
+          email: ''
+        },
       };
     },
+
+    ...mapMutations([
+      'setEchoResponse'
+    ]),
+
     methods: {
-      setEchoResponse() {
+      saveFormData(formData) {
         this.$store.dispatch("echo", formData);
       }
     },
@@ -42,7 +46,7 @@
 </script>
 
 <style lang="scss">
- .wrapper {
+  .wrapper {
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -50,7 +54,7 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-}
+  }
 
   .links {
     width: 100%;
