@@ -1,6 +1,6 @@
 export const state = () => ({
   messages: [],
-  somedata: ''
+  someData: []
 })
 
 export const mutations = {
@@ -11,7 +11,7 @@ export const mutations = {
   },
 
   setEchoResponse(state, formData) {
-      // formData
+    state.someData = formData
   }
 }
 

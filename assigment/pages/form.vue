@@ -7,9 +7,10 @@
       input(class="input" type="text" v-model="formData.email" placeholder="Email")
       div(class="button--submit" @click="saveFormData(formData)") Submit
 
-
-      <ul>
-          <li></li>
+      <ul class="form-output">
+          <li v-for="(value, name) in someData">
+              <p>{{name}}: {{value}}</p>
+          </li>
       </ul>
     <div class="links">
       <nuxt-link to="/" class="button--green">homepage</nuxt-link>
@@ -20,22 +21,29 @@
     </div>
   </div>
 </template>
+
 <script>
-import {mapMutations} from 'vuex'
+  import {mapMutations, mapGetters} from 'vuex'
+
   export default {
     data() {
       return {
         formData: {
-          name: '',
-          place: '',
-          email: ''
+          name: 'ewgfewg',
+          place: 'wegweg',
+          email: 'wegegw'
         },
       };
     },
-
     ...mapMutations([
       'setEchoResponse'
     ]),
+
+    computed: {
+      someData() {
+        return this.$store.state.someData
+      }
+    },
 
     methods: {
       saveFormData(formData) {
@@ -100,6 +108,11 @@ import {mapMutations} from 'vuex'
         border: 1px solid #35495e;
         color: #fff;
       }
+    }
+
+    .form-output {
+      list-style: none;
+      margin: 20px 0;
     }
   }
 </style>
